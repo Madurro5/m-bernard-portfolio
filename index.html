@@ -1,0 +1,1370 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Malo BERNARD - Technicien électronique et embarqué, développement C/C++ et Python, modernisation de systèmes industriels" />
+  <title>Malo BERNARD | Portfolio - Technicien Électronique & Développement Embarqué</title>
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8f9fa;
+      --bg-tertiary: #e9ecef;
+      --text-primary: #212529;
+      --text-secondary: #495057;
+      --text-muted: #6c757d;
+      --accent: #0d6efd;
+      --accent-light: #6ea8fe;
+      --accent-dark: #0a58ca;
+      --border: #dee2e6;
+      --card-bg: #ffffff;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+      --shadow-xl: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+
+    p {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-tertiary);
+      border-color: var(--accent);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      padding: 0.5rem 0;
+      position: relative;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .section {
+      padding: 4rem 0;
+      background: var(--bg-primary);
+    }
+
+    .section-alt {
+      background: var(--bg-secondary);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: '';
+      height: 2px;
+      background: var(--accent);
+      flex: 1;
+      max-width: 60px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-description {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .skills-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      margin-bottom: 2rem;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-size: 1.125rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      padding: 0.375rem 0.875rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 0.25rem;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      color: var(--text-secondary);
+    }
+
+    .skill-tag:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-image {
+      height: 180px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      font-size: 0.875rem;
+      border-bottom: 1px solid var(--border);
+      
+      /* Règle magique : Centré, recadré proprement, et superposition */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* On fusionne le dégradé ET l'image pour chaque carte */
+    .project-card:nth-child(1) .project-image {
+      background-image: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), /* Ajustez l'opacité du dégradé selon vos variables */
+        url('images/pot_vibrant.jpg');
+    }
+
+    .project-card:nth-child(2) .project-image {
+      background-image: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+        url('images/CNC.jpg');
+    }
+
+    .project-content {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .project-header {
+      margin-bottom: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .project-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      padding: 0.25rem 0.75rem;
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: #10b981;
+      color: #10b981;
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: #f59e0b;
+      color: #f59e0b;
+    }
+
+    .project-description {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .project-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      background: var(--bg-secondary);
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+    }
+    
+    .project-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: bold;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+
+    .project-results {
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-results p {
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .results-tags {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
+    
+    .cv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .cv-section {
+      margin-bottom: 2rem;
+    }
+
+    .cv-section h3 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .cv-item {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .cv-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-item-title {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .cv-item-date {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      text-align: right;
+    }
+
+    .cv-item-company {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cv-item-description {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .cv-item-list {
+      list-style: none;
+    }
+
+    .cv-item-list li {
+      margin-bottom: 0.25rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .cv-item-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.2s ease;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      text-align: right;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.875rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: var(--bg-tertiary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      border: 2px solid var(--accent);
+    }
+
+    .contact-title {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-size: 1.125rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: var(--bg-secondary);
+      border-radius: 0.375rem;
+      transition: all 0.2s ease;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .contact-link:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      background: var(--bg-secondary);
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.75rem; }
+      h3 { font-size: 1.25rem; }
+      
+      .hero {
+        padding: 6rem 0 3rem;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .about-grid,
+      .skills-grid,
+      .projects-grid,
+      .cv-grid,
+      .contact-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::before {
+        left: 0.25rem;
+      }
+      
+      .timeline-item::before {
+        left: -1rem;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    .info-banner {
+      background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(13, 110, 253, 0.05));
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 0.375rem;
+      margin: 2rem 0;
+    }
+
+    .info-banner p {
+      margin-bottom: 0;
+      color: var(--text-secondary);
+    }
+  </style>
+  <style>
+    /* Spline Background */
+    .spline-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* remonte au-dessus du fond de page */
+      opacity: 0.25;
+      pointer-events: auto;
+    }
+
+    /* La navbar reste cliquable au-dessus de tout */
+    .navbar {
+      z-index: 50;
+      pointer-events: auto;
+    }
+
+    /* Le hero laisse passer les clics vers Spline dans les zones vides */
+    .hero {
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      overflow: visible;
+      background: transparent;
+    }
+
+    /* Seuls les boutons et liens du hero restent cliquables */
+    .hero .btn,
+    .hero a {
+      pointer-events: auto;
+    }
+
+    /* Les autres sections ont un fond solide, Spline masqué derrière */
+    .section,
+    footer {
+      position: relative;
+      z-index: 1;
+      pointer-events: auto;
+    }
+    
+    .spline-bg iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    body::before {
+      display: none;
+    }
+
+    /* Style pour l'item futur (ligne en pointillés) */
+    .timeline-item-future::before {
+      background: transparent;
+      border: 2px dashed var(--accent);
+      box-shadow: none;
+    }
+
+    .timeline-item-future {
+      opacity: 0.8;
+    }
+
+    /* Ligne du timeline en pointillés après le dernier item réel */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 0.5rem;
+      bottom: 0;
+      width: 2px;
+      height: 60px; /* Longueur de la ligne en pointillés */
+      background: repeating-linear-gradient(
+        to bottom,
+        var(--border),
+        var(--border) 4px,
+        transparent 4px,
+        transparent 8px
+      );
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Spline 3D Background -->
+  <div class="spline-bg">
+    <iframe
+      src="https://my.spline.design/stackableglass-ORm1jIlKZ6RaiTIEzUQYmf4o-Q6K/"
+      frameborder="0"
+      width="100%"
+      height="100%">
+    </iframe>
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="nav-logo">MB</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">À propos</a></li>
+        <li><a href="#education" class="nav-link">Parcours</a></li>
+        <li><a href="#skills" class="nav-link">Compétences</a></li>
+        <li><a href="#projects" class="nav-link">Projets</a></li>
+        <li><a href="#testimonials" class="nav-link">Témoignages</a></li>
+        <li><a href="#cv" class="nav-link">CV</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="animate-fade-in-up">Malo BERNARD | Technicien Électronique & Développement Embarqué</h1>
+        <p class="animate-fade-in-up delay-100">
+          Allier la rigueur d'esprit à l'impact du concret. J'aime traduire des besoins produits en interfaces accessibles et fonctionnelles.
+        </p>
+        <div class="hero-tags animate-fade-in-up delay-200">
+          <span class="tag">C/C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">STM32</span>
+          <span class="tag">Automatisation</span>
+          <span class="tag">Embarqué</span>
+        </div>
+        <div class="animate-fade-in-up delay-300">
+          <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn-secondary">Me contacter</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Défilez vers le bas</span>
+      <span>↓</span>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">À propos de moi</h2>
+      </div>
+      <div class="about-grid">
+        <div class="card animate-fade-in-up">
+          <h3>Qui suis-je ?</h3>
+          <p style="margin-top: 1rem;">
+            Technicien <strong>électronique et embarqué</strong> spécialisé dans la <strong>programmation C/C++ et Python</strong>.
+          </p>
+          <p>
+            Actuellement en alternance à la <strong>SETM de Bruz</strong> (2ème RMAT) en tant que développeur d'applications matérielles/logicielles,
+            je travaille sur un système de <strong>commande et de contrôle de pot vibrant</strong>, de maintenance améliorative d'une <strong>machine à commande numérique (CNC)</strong>,
+            ou plus généralement de simplification de processus d'utilisation.
+          </p>
+          <p>
+            Mon approche allie <strong>rigueur technique</strong>, <strong>créativité</strong> et 
+            <strong>résolution de problèmes</strong> pour transformer des besoins concrets en solutions 
+            fonctionnelles et maintenables.
+          </p>
+        </div>
+        <div class="card animate-fade-in-up delay-100">
+          <h3>Valeurs Professionnelles</h3>
+          <ul style="list-style: none; margin-top: 1rem;">
+            <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="color: var(--accent);">▶</span> 
+              <strong>Professionnalisme</strong> : Je m'engage totalement dans chaque projet
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="color: var(--accent);">▶</span> 
+              <strong>Altruisme</strong> : J'aime aider et partager mes connaissances
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="color: var(--accent);">▶</span> 
+              <strong>Rigueur</strong> : J'agis avec méthodologie et précision dans mon travail
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="color: var(--accent);">▶</span> 
+              <strong>Curiosité technique</strong> : J'aime apprendre et explorer sur tous les domaines et en particuliers dans la technique 
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--accent);">▶</span> 
+              <strong>Souci de l'accessibilité</strong> : Je suis convaincu que les solutions doivent être compréhensibles et utilisables pour être efficaces
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Parcours Académique & Professionnel</h2>
+      </div>
+      <div class="card animate-fade-in-up">
+        <div class="timeline">
+          <div class="timeline-item timeline-item-future">
+            <div class="timeline-date">2026 - À venir</div>
+            <div class="timeline-title">Ecole de Maistrance</div>
+            <div class="timeline-company">Marine Nationale Pole Ecole de Toulon puis Rochefort</div>
+            <div class="timeline-description">
+              Formation d'officier marinier pour la Marine NAtionale de 5 mois à Toulon puis formation de spécialité Technicien Aéronautique à Rochefort durant 11 mois.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">Octobre 2024 - Août 2026</div>
+            <div class="timeline-title">Alternance - Technicien optro-électronique / informatique</div>
+            <div class="timeline-company">SETM de Bruz - 2ème RMAT, 35170 Bruz</div>
+            <div class="timeline-description">
+              Développeur d'applications matérielles/logicielles au sein de la cellule experte pour les matériels et domaines suivants :
+              Système de commande et de contrôle d'un pot vibrant, améliorations d'une machine à commande numérique (CNC) (logicielles et matérielles). Intégré au groupe d'innovation de la SETM de Bruz où l'écoute des différents intervenants permet de proposer
+              et élaborer des solutions techniques pertinentes dans les domaines du <strong>Maintien en Condition Opérationnelle (MCO)</strong>.
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - 2026</div>
+            <div class="timeline-title">BUT Génie Électrique et Informatique Industrielle (GEII)</div>
+            <div class="timeline-company">IUT de Nantes - Spécialité Electronique et Systèmes embarqués</div>
+            <div class="timeline-description">
+              Formation complète en électronique, informatique industrielle, automatisme et développement embarqué. Spécialité pour l'électronique numérique lié au parcours de spécialité.
+              <strong>Major de promotion</strong>. Alternance à la SETM de Bruz depuis octobre 2024.
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-title">Baccalauréat Général</div>
+            <div class="timeline-company">Lycée Gaspard Monge la Chauvinière, Nantes</div>
+            <div class="timeline-description">
+              Spécialités : Mathématiques, Physique-Chimie | Option : Mathématiques Expertes
+              <br><strong>Mention : Très Bien</strong>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">Étés 2021-2024</div>
+            <div class="timeline-title">Runner / Serveur / Chef de rang</div>
+            <div class="timeline-company">Le Relais du Duc de l'Aiguillon, Le Croisic</div>
+            <div class="timeline-description">
+              Gestion et contribution à la coordination du service, encadrement de runners, optimisation de l'organisation de mon rang.
+              Contribution à la cohésion et à l'organisation du service. Travail sous pression, amplitude horaire importante et travail de nuit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Compétences</h2>
+      </div>
+      <div class="skills-container">
+        <div class="card animate-fade-in-up">
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>🔧 Compétences Techniques</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">VHDL</span>
+                <span class="skill-tag">STM32 (Cortex-M)</span>
+                <span class="skill-tag">Arduino</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>🏭 Domaines d'Expertise</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Électronique embarquée</span>
+                <span class="skill-tag">Développement logiciel</span>
+                <span class="skill-tag">Traitement du signal</span>
+                <span class="skill-tag">Asservissement</span>
+                <span class="skill-tag">Automatisation industrielle</span>
+                <span class="skill-tag">Fraisage de circuits imprimés (PCB Milling) </span>
+                <span class="skill-tag">CNC / Usinage</span>
+                <span class="skill-tag">Tests vibratoires</span>
+                <span class="skill-tag">Reverse Engineering</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>🛠️ Outils & Méthodes</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub</span>
+                <span class="skill-tag">Markdown</span>
+                <span class="skill-tag">LaTeX</span>
+                <span class="skill-tag">MkDocs</span>
+                <span class="skill-tag">STM32CubeIDE</span>
+                <span class="skill-tag">KiCad</span>
+                <span class="skill-tag">FlatCAM</span>
+                <span class="skill-tag">GRBL</span>
+                <span class="skill-tag">Site HTML/CSS</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <h3>👥 Compétences Transversales</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Travail en équipe</span>
+                <span class="skill-tag">Gestion de projet</span>
+                <span class="skill-tag">Résolution de problèmes</span>
+                <span class="skill-tag">Documentation technique</span>
+                <span class="skill-tag">Communication technique</span>
+                <span class="skill-tag">Autonomie</span>
+                <span class="skill-tag">Adaptabilité</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Projets Réalisés</h2>
+        <p style="margin-top: 1rem;">
+          Découvrez mes projets de modernisation de systèmes industriels et de développement embarqué.
+        </p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card animate-fade-in-up">
+          <div class="project-image">
+            <span>📡 Système de Test Vibratoire</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Modernisation d'un Pot Vibrant LDS V726</h3>
+              <div class="project-badges">
+                <span class="badge">STM32</span>
+                <span class="badge">Node.js</span>
+                <span class="badge">SWEPT SINE</span>
+                <span class="badge">Temps réel</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Remise en service et modernisation complète d'un pot vibrant haute précision (valeur >10k€) 
+              en remplaçant un système de contrôle des années 1980 (SI1215) par une solution moderne 
+              basée sur STM32H755ZI et une interface web Node.js.
+            </p>
+            <ul class="project-features">
+              <li><strong>Architecture dual-core</strong> : Gestion Coeur M4 et M7 sur STM32</li>
+              <li><strong>NCO avec accumulateur de phase</strong> : Génération du sinus avec un contrôle précis de la fréquence</li>
+              <li><strong>Gestion synchrone DAC/ADC</strong> : Pour un contrôle d'échantillonnage</li>
+              <li><strong>Communication USART</strong> : entre la carte STM32 et l'interface PC</li>
+              <li><strong>Mode SWEPT SINE</strong> : Sinus à fréquence balayée avec amplitude contrôlée</li>
+            </ul>
+            <div class="project-results">
+              <p><strong>Résultats obtenus :</strong></p>
+              <div class="results-tags">
+                <span class="badge badge-success">✓ Stimulation SWEPT SINE</span>
+                <span class="badge badge-success">✓ Suivi fréquence précis</span>
+                <span class="badge badge-warning">🔄 Suivi accélération</span>
+                <span class="badge badge-warning">🔄 Réduction bruit</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Madurro5/pot_vibrant" target="_blank" class="btn btn-secondary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card animate-fade-in-up delay-100">
+          <div class="project-image">
+            <span>🖨️ Fraiseuse CNC PCB</span>
+          </div>
+
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Automatisation d'une CNC pour Fabrication PCB</h3>
+              <div class="project-badges">
+                <span class="badge">Python</span>
+                <span class="badge">FlatCAM</span>
+                <span class="badge">GRBL</span>
+                <span class="badge">MkDocs</span>
+                <span class="badge">Electronique</span>
+                <span class="badge">Automatisation</span>
+              </div>
+            </div>
+            <p class="project-description">
+              Automatisation complète du workflow de fabrication de circuits imprimés par création d'un plugin Python au sein du logiciel Open Source FlatCAM, 
+              réduisant le temps de préparation de plusieurs dizaines de minutes à quelques clics, avec documentation complète pour la pérennité du système.
+            </p>
+            <ul class="project-features">
+              <li><strong>Plugin Python natif</strong> intégré à FlatCAM pour automatisation complète</li>
+              <li><strong>Conversion Gerber → G-Code</strong> sans paramétrage manuel</li>
+              <li><strong>Gestion automatique</strong> des symétries, changements d'outils et perçages</li>
+              <li><strong>Détection de surface</strong> pour mise à zéro Z précise (modification circuit électronique et paramétrage GRBL)</li>
+              <li><strong>Documentation complète</strong> avec MkDocs (procédures, utilisation, reprise du développement)</li>
+            </ul>
+            <div class="project-results">
+              <p><strong>Résultats obtenus :</strong></p>
+              <div class="results-tags">
+                <span class="badge badge-success">✓ Temps réduit de 90%</span>
+                <span class="badge badge-success">✓ Élimination des erreurs</span>
+                <span class="badge badge-success">✓ Mise à zéro Z fiable</span>
+                <span class="badge badge-success">✓ Documentation maintenable</span>
+                <span class="badge badge-success">✓ Possibilité d'adapter les usinages</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://madurro5.github.io/Automated_FlatCAM_Documentation/" target="_blank" class="btn btn-secondary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Témoignages et Références</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="card testimonial-card animate-fade-in-up">
+          <p class="testimonial-text">
+            "Malo est un étudiant exemplaire, très motivé, curieux et rigoureux. Major de promotion sur l'ensemble de sa scolarité,
+            il présente un niveau scientifique et technique exceptionnel, une grande autonomie et un excellent comportement.
+            Son potentiel lui permettra de briller dans toute poursuite d'études, y compris les plus sélectives."
+          </p>
+          <p class="testimonial-author">— Avis de poursuite d'étude BUT GEII</p>
+        </div>
+        <div class="card testimonial-card animate-fade-in-up delay-100">
+          <p class="testimonial-text">
+            "Malo est très motivé et sait rechercher et acquérir les compétences dont il a besoin pour mener à bien les projets qui lui sont confiés.
+            Il est curieux d'apprendre et sait fournir le travail nécessaire pour acquérir des connaissances dans de multiples domaines
+            qui sont pour certains hors du domaine GEII."
+          </p>
+          <p class="testimonial-author">— M. DAVID, Tuteur Pédagogique Alternance BUT GEII</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Informations Complémentaires</h2>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">
+          Retrouvez ici les informations traditionnellement présentes sur un CV.
+        </p>
+      </div>
+      
+      <div class="cv-grid">
+        <div class="card animate-fade-in-up">
+          <div class="cv-section">
+            <h3>🌍 Langues</h3>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <div class="cv-item-title">Français</div>
+              </div>
+              <div class="cv-item-description">Natif</div>
+            </div>
+            <div class="cv-item">
+              <div class="cv-item-header">
+                <div class="cv-item-title">Anglais</div>
+              </div>
+              <div class="cv-item-description">Courant (Quotidien : C1 / Technique : C1)</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card animate-fade-in-up delay-100">
+          <div class="cv-section">
+            <h3>❤️ Centres d'Intérêt</h3>
+            <ul class="cv-item-list">
+              <li>Beatmaking / Musique</li>
+              <li>Sport (Course à pied, Natation, Calisthénie, Hip Hop)</li>
+              <li>Cuisine</li>
+              <li>Informatique & Développement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p style="margin-top: 1rem; color: var(--text-secondary);">
+          N'hésitez pas à me contacter pour discuter de collaborations ou d'opportunités professionnelles.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="card contact-card animate-fade-in-up">
+          <div class="contact-icon">📧</div>
+          <h3 class="contact-title">Email</h3>
+          <div class="contact-links">
+            <a href="mailto:contact.malobernard@gmail.com" class="contact-link">
+              <span>📩</span> contact.malobernard@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="card contact-card animate-fade-in-up delay-100">
+          <div class="contact-icon">📞</div>
+          <h3 class="contact-title">Téléphone</h3>
+          <div class="contact-links">
+            <a href="tel:+33641447048" class="contact-link">
+              <span>📱</span> +33 6 -- -- -- --
+            </a>
+          </div>
+        </div>
+        <div class="card contact-card animate-fade-in-up delay-200">
+          <div class="contact-icon">🌐</div>
+          <h3 class="contact-title">Réseaux Professionnels</h3>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/malo-bernard-7693bb299/" target="_blank" class="contact-link">
+              <span>📱</span> LinkedIn
+            </a>
+            <a href="https://github.com/Madurro5" target="_blank" class="contact-link">
+              <span>🐙</span> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="card contact-card animate-fade-in-up delay-300">
+          <div class="contact-icon">📍</div>
+          <h3 class="contact-title">Localisation</h3>
+          <div class="contact-links">
+            <a href="#" class="contact-link">
+              <span>🇫🇷</span> Nantes, France
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Malo BERNARD | Portfolio - Technicien Électronique & Développement Embarqué</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">
+        BUT GEII - Major de promotion | IUT de Nantes
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+        <a href="#" style="color: var(--text-muted);">Politique de confidentialité</a> | 
+        <a href="#" style="color: var(--text-muted);">Mentions légales</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in-up');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card, .project-card, .contact-card, .testimonial-card').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+
+    let hasScrolled = false;
+    window.addEventListener('scroll', () => {
+      if (!hasScrolled && window.scrollY > 100) {
+        hasScrolled = true;
+        const indicator = document.querySelector('.scroll-indicator');
+        if (indicator) {
+          indicator.style.opacity = '0';
+          setTimeout(() => indicator.style.display = 'none', 300);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
